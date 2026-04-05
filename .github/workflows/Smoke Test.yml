@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Smoke Tests
 
 on:
   push: # Auto-trigger the workflow on push to main or master branches
@@ -10,11 +10,11 @@ on:
       - main
       - master
   schedule:
-    - cron: "0 13 * * *" # Runs every day at 8:00 AM EST
+    - cron: "0 12 * * *" # Runs every day at 7:00 AM EST
   workflow_dispatch: # Allows manual trigger
 
 jobs:
-  test:
+  smoke-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest # Virtual amchine (macos-latest, windows-latest, ubuntu-latest)
 
@@ -44,7 +44,7 @@ jobs:
           echo "PRACTICE_PASSWORD=${{ secrets.PRACTICE_PASSWORD }}" >> $GITHUB_ENV
 
       # runs the tests in headless mode (without a GUI)
-      - name: Run Playwright tests
+      - name: Run Playwright Smoke tests
         run: npm run test-smoke
 
       # Upload test results and reports
