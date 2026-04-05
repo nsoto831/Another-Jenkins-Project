@@ -12,7 +12,7 @@ test('Bypass authentication by embedding the credentials in the URL', async ({ p
 
 test('Bypass authentication by encoding the credentials base64 format', async ({ page }) => {
     
-    let encodedCredential = Buffer.from("admin:admin").toString("base64");
+    let encodedCredential = Buffer.from(`${process.env.BASIC_AUTH_USER}:${process.env.BASIC_AUTH_PASSWORD}`).toString("base64");
 
     await page.setExtraHTTPHeaders({'Authorization': `Basic ${encodedCredential}`});
 
