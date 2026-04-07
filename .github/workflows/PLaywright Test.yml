@@ -1,3 +1,4 @@
+# This workflow runs Playwright tests on push, pull request, schedule, and manual trigger
 name: Playwright Tests
 
 on:
