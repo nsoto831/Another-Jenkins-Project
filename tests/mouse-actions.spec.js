@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 
-test.describe("Test Group", () => {
+test.describe("Test Group @smoke", () => {
   // create a before to navigate to https://the-internet-5chk.onrender.com/ 
   test.beforeEach(async ({ page }) => {
     await page.goto("https://the-internet-5chk.onrender.com/ ");

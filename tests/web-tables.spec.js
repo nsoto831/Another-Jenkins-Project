@@ -46,7 +46,7 @@ test('Web Table Practice2', async ({ page }) => {
 });
 
 
-test('Web Table Practice3', async ({ page }) => {
+test('Web Table Practice3 @smoke', async ({ page }) => {
      
     await page.goto("https://the-internet-5chk.onrender.com/web-tables");
 
